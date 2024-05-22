@@ -1,0 +1,48 @@
+#aboutWrapper {
+  margin: 1rem 2rem;
+  padding: 1rem 1rem;
+  background-color: rgb(200, 212, 197);
+  font-family: "Darker Grotesque", sans-serif;
+  color: rgb(52, 61, 51);
+}
+#aboutWrapper span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+#aboutWrapper h2 {
+  text-align: center;
+  /* text-decoration: underline; */
+}
+#aboutWrapper h4 {
+  font-size: 1.2rem;
+}
+#firstPara {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-top: 1rem;
+  width: 100%;
+}
+#aboutWrapper p {
+  font-weight: 500;
+}
+#secondPara {
+  /* width: 80%; */
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+#secondPara h4 {
+  padding-bottom: 0.5rem;
+}
+#thirdPara {
+  /* width: 80%; */
+  padding-top: 1.5rem;
+}
+#thirdPara p {
+  padding: 0.5rem 0rem;
+  font-size: 1.1rem;
+}
+#thirdPara h4 {
+  text-align: center;
+}

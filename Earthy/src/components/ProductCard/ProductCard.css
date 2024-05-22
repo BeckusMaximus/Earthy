@@ -1,0 +1,60 @@
+#card {
+  font-family: "Darker Grotesque", sans-serif;
+  margin: 0.5rem;
+  width: 10rem;
+  height: 12rem;
+  background-color: rgb(213, 224, 209);
+  position: relative;
+  box-shadow: 2px 2px 4px rgba(95, 95, 95, 0.664);
+  cursor: pointer;
+}
+#card img {
+  object-fit: cover;
+  width: 100%;
+}
+#price {
+  font-weight: 600;
+  padding: 0rem 0.5rem;
+  width: fit-content;
+  float: right;
+  position: absolute;
+  top: 60%;
+  bottom: 40%;
+  align-self: center;
+  background-color: rgb(253, 253, 253);
+}
+#productName {
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  align-self: flex-start;
+  position: absolute;
+}
+
+.productDetails {
+  display: flex;
+  align-items: center;
+  height: 4.3rem;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+.productDetails .card-btn {
+  align-self: flex-end;
+}
+.card-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.card-btn button {
+  cursor: pointer;
+  background-color: rgb(105, 123, 95);
+  font-family: "Darker Grotesque", sans-serif;
+  color: white;
+  border-style: none;
+  padding: 0rem 0.2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(95, 95, 95, 0.664);
+}
+.card-btn button:hover {
+  background-color: rgb(43, 56, 36);
+}

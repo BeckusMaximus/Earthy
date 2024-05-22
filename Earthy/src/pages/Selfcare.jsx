@@ -1,8 +1,8 @@
-
-const Bathroom = () =>{
-    return(
+const Bathroom = () => {
+  return (
     <>
-    
-  </>)
-}
-export default Bathroom
+      <div>Hejsan</div>;
+    </>
+  );
+};
+export default Bathroom;
