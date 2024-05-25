@@ -15,8 +15,10 @@ const Navbar = () => {
           className="hamburgerMenu"
         />
         <div className="logo">
+          {/*   <Link to="/"> */}
           <img id="logo" src="./monstera-logo.png" alt="Logo" />
           <h3>EARTHY</h3>
+          {/*   </Link> */}
         </div>
 
         <div className="nav-links">

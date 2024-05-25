@@ -6,7 +6,7 @@ import Selfcare from "../pages/Selfcare";
 import Layout from "../components/Layout";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-
+import ProductPage from "../pages/ProductPage";
 
 const router = createHashRouter([
   {
@@ -19,6 +19,7 @@ const router = createHashRouter([
       { element: <Selfcare />, path: "/selfcare" },
       { element: <About />, path: "/about" },
       { element: <Contact />, path: "/contact" },
+      { element: <ProductPage />, path: "/productPage/:productId" },
     ],
   },
 ]);
