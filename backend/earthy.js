@@ -15,9 +15,11 @@ let database;
 })();
 
 const app = express();
-app.get("/", async (request, response) => {
-  const products = await database.all("SELECT * FROM products");
-  response.send(products);
+app.get("/:id", async (request, response) => {
+  const products = await database.all("SELECT * FROM products WHERE id=?", [
+    request.params.id,
+  ]);
+  response.send(products[0]);
 });
 
 app.listen(3000, () => {
