@@ -1,0 +1,52 @@
+#reviewForm {
+  width: 18rem;
+  background-color: #b4b3ae;
+  padding: 0rem 1rem 1rem 1rem;
+  border-radius: 6px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#reviewForm label {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+#inputName {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 6px;
+  border-style: none;
+  font-family: "Darker Grotesque", sans-serif;
+}
+#textarea {
+  width: 100%;
+  border-style: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Darker Grotesque", sans-serif;
+}
+#submitBtn {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0rem 0.5rem 0.2rem 0.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border-style: none;
+  font-family: "Darker Grotesque", sans-serif;
+}
+@media screen and (min-width: 768px) {
+  #reviewForm {
+    width: 25rem;
+    padding: 1rem;
+  }
+  #reviewForm label {
+    font-size: 1.5rem;
+  }
+  #submitBtn {
+    font-size: 1.4rem;
+    width: 5rem;
+    align-self: center;
+  }
+}

@@ -1,0 +1,12 @@
+#confirmWrapper {
+  font-family: "Darker Grotesque", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 30vh;
+}
+
+#confirmWrapper p {
+  font-weight: 600;
+}
