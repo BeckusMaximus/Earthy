@@ -25,6 +25,9 @@
   padding: 0rem 3rem 1rem 3rem;
 }
 @media screen and (min-width: 768px) {
+  #mainContact {
+    margin: 0rem 7rem;
+  }
   #mainContact h2 {
     font-size: 2rem;
   }

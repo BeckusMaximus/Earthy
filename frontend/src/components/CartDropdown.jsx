@@ -4,6 +4,7 @@ import useCart from "/src/hooks/useCart";
 import PropTypes from "prop-types";
 import "./cartDropdown.css";
 import { VscClose } from "react-icons/vsc";
+
 const CartDropdown = ({ onClose }) => {
   const { state, dispatch } = useCart();
   const totalAmount = state.cartItems.reduce(
@@ -32,23 +33,26 @@ const CartDropdown = ({ onClose }) => {
           {state.cartItems.map((item) => (
             <li key={item.id}>
               <div className="cart-item">
+                <div className="listImg">
+                  <img src={item.image_link} alt={item.name} />
+                </div>
                 <p>{item.name}</p>
-                <p className="cartPrice">
-                  {/*  {item.quantity} x  */}${item.price}
-                </p>
-                <button
-                  className="addBtn"
-                  onClick={() => handleIncrease(item.id)}
-                >
-                  +
-                </button>
-                <p className="quantityCart">{item.quantity}</p>
-                <button
-                  className="decreaseBtn"
-                  onClick={() => handleDecrease(item.id)}
-                >
-                  -
-                </button>
+                <p className="cartPrice">${item.price}</p>
+                <div className="add">
+                  <button
+                    className="addBtn"
+                    onClick={() => handleIncrease(item.id)}
+                  >
+                    +
+                  </button>
+                  <p className="quantityCart">{item.quantity}</p>
+                  <button
+                    className="decreaseBtn"
+                    onClick={() => handleDecrease(item.id)}
+                  >
+                    -
+                  </button>
+                </div>
                 <button
                   className="removeBtn"
                   onClick={() => handleRemove(item.id)}

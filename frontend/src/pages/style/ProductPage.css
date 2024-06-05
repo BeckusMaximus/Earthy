@@ -42,13 +42,15 @@
   border-style: none;
   background-color: #aaa799;
   color: rgb(0, 0, 0);
-  padding: 0rem 0.2rem;
+  padding: 0.2rem 0.2rem;
+  border-radius: 6px;
   margin: 0.4rem;
-  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
   box-shadow: 2px 2px 4px rgba(95, 95, 95, 0.664);
 }
+
 #reviewWrap {
   margin-top: 3rem;
 }
@@ -156,5 +158,8 @@
 @media screen and (min-width: 945px) {
   #productView {
     margin: 1rem 4rem;
+  }
+  .reviewBox {
+    width: 30%;
   }
 }

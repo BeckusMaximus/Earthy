@@ -1,12 +1,5 @@
 import "../pages/style/contact.css";
-import {
-  APIProvider,
-  Map,
-  useAdvancedMarkerRef,
-  AdvancedMarker,
-} from "@vis.gl/react-google-maps";
 const Contact = () => {
-  const [markerRef] = useAdvancedMarkerRef();
   return (
     <>
       <div id="mainContact">
@@ -34,19 +27,6 @@ const Contact = () => {
             <li>Sunday: Closed</li>
           </ul>
         </div>
-        <APIProvider apiKey={"AIzaSyBnKmR2FrktUT54fnBYkikohna-NDu4oVE"}>
-          <Map
-            style={{ width: "50vw", height: "50vh" }}
-            defaultCenter={{ lat: 59.31554, lng: 18.02334 }}
-            defaultZoom={5}
-            gestureHandling={"greedy"}
-            disableDefaultUI={true}
-          />
-          <AdvancedMarker
-            ref={markerRef}
-            position={{ lat: 59.31554, lng: 18.02334 }}
-          />
-        </APIProvider>
       </div>
     </>
   );

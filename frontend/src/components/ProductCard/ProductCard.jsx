@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../ProductCard/ProductCard.css";
 import useCart from "/src/hooks/useCart";
 
-const ProductCard = ({ id, imgLink, name, price }) => {
+const ProductCard = ({ id, image_link, name, price }) => {
   const navigate = useNavigate();
 
   const handleReadMoreClick = () => {
@@ -12,14 +12,14 @@ const ProductCard = ({ id, imgLink, name, price }) => {
   const { dispatch } = useCart();
 
   const handleAddToCart = () => {
-    const product = { id, imgLink, name, price };
+    const product = { id, image_link, name, price };
     dispatch({ type: "ADD_TO_CART", product });
   };
 
   return (
     <div className="card">
       <div id="imgContainer">
-        <img src={imgLink} alt={name} />
+        <img src={image_link} alt={name} />
       </div>
       <div className="productDetails">
         <p id="productName">{name}</p>
@@ -39,7 +39,7 @@ const ProductCard = ({ id, imgLink, name, price }) => {
 
 ProductCard.propTypes = {
   id: PropTypes.number,
-  imgLink: PropTypes.string,
+  image_link: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
 };

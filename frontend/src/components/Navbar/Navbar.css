@@ -27,14 +27,18 @@ nav div {
 }
 .cart-button {
   border-style: none;
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
   border-radius: 6px;
   background-color: #b0cab2;
-  padding: 0rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }
+
 .nav-links {
   display: flex;
   flex-grow: 1;

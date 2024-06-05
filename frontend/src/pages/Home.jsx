@@ -9,19 +9,33 @@ const Home = () => {
           <h1>Desiring to live a more eco-friendly life?</h1>
           <h2>Here you can find 100% Eco-friendly products for your home</h2>
         </div>
-        <img src="./fern.jpg" />
+        <img src="/src/assets/fern.jpg" />
       </header>
       <div id="indexMain">
+        <h2>New arrivals</h2>
+        <div id="newArrivals">
+          <div className="newBox">
+            <img src="/src/assets/cleaningSpray.avif" />
+          </div>
+          <div className="newBox">
+            <img src="/src/assets/cleaningSpray.avif" />
+          </div>
+          <div className="newBox">
+            <img src="/src/assets/cleaningSpray.avif" />
+          </div>
+        </div>
         <h4 id="mainPara">
           At Earthy, we believe that every small step towards sustainability can
           lead to a brighter, greener future. Our mission is to provide you with
           eco-friendly products that make it easy to live a more environmentally
-          conscious lifestyle without compromising on quality or style.{" "}
+          conscious lifestyle without compromising on quality or style.
         </h4>
+
+        <h3>Check out our categories</h3>
         <div id="indexLinks">
           <div className="linksWrapper">
             <Link to="/categoryPage/Kitchen">
-              <img src="./linkImg1.jpg" />
+              <img src="/src/assets/linkImg1.jpg" />
               <div>
                 <h4>Kitchen</h4>
               </div>
@@ -29,7 +43,7 @@ const Home = () => {
           </div>
           <div className="linksWrapper">
             <Link to="/categoryPage/Bathroom">
-              <img src="./soap.avif" />
+              <img src="/src/assets/soap.avif" />
               <div>
                 <h4>Bathroom</h4>
               </div>
@@ -37,24 +51,13 @@ const Home = () => {
           </div>
           <div className="linksWrapper">
             <Link to="/categoryPage/Selfcare">
-              <img src="./skincare.avif" />
+              <img src="/src/assets/skincare.avif" />
               <div>
                 <h4>Selfcare</h4>
               </div>
             </Link>
           </div>
         </div>
-
-        {/* <h5>Our Commitment to the Planet</h5>
-        <p>
-  
-          We are passionate about protecting our planet and ensuring a healthy
-          environment for future generations. That’s why all our products are
-          carefully selected and crafted with sustainability in mind. From
-          biodegradable wood cutlery and reusable glass jars to organic body
-          care and zero-waste cleaning solutions, every item in our collection
-          is designed to reduce waste and promote a cleaner, greener world.
-        </p> */}
 
         <h3 id="reviewTitle">See what other think!</h3>
         <div id="indexReviews">
@@ -75,7 +78,7 @@ const Home = () => {
           </div>
         </div>
         <div id="indexContributeImg">
-          <img src="./indexImg.jpg" alt="Plant in hands" />
+          <img src="/src/assets/indexImg.jpg" alt="Plant in hands" />
           <div id="contributeText">
             <h3>CONTRIBUTE TO A MORE SUBSTAINABLE FUTURE</h3>
             <svg

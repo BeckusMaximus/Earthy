@@ -13,7 +13,7 @@ const About = () => {
         </p>
       </div>
       <div id="secondPara">
-        <img id="logo" src="./monstera-logo.png" alt="Logo" />
+        <img id="logo" src="/src/assets/monstera-logo.png" alt="Logo" />
         <h4>Our Story</h4>
         <p>
           Earthy was founded by a group of eco-conscious individuals who wanted
@@ -32,7 +32,7 @@ const About = () => {
       </div>
 
       <div id="thirdPara">
-        <img id="logo" src="./monstera-logo.png" alt="Logo" />
+        <img id="logo" src="/src/assets/monstera-logo.png" alt="Logo" />
         <h4>Why Earthy? </h4>
         <p>
           <span>Quality Products:</span> Our products are designed to make

@@ -7,10 +7,11 @@ const Footer = () => {
         {/*         <h3>Crafting a greener future, one step at a time.</h3> */}
         <div className="footerLinks">
           <Link to="/">Home</Link>
-          <Link to="/kitchen">Kitchen</Link>
-          <Link to="/bathroom">Bathroom</Link>
-          <Link to="/Selfcare">Selfcare</Link>
+          <Link to="/categoryPage/Kitchen">Kitchen</Link>
+          <Link to="/categoryPage/Bathroom">Bathroom</Link>
+          <Link to="/categoryPage/Selfcare">Selfcare</Link>
           <Link to="/About">About</Link>
+          <Link to="/Contact">Contact</Link>
         </div>
         <p className="crName">© Earthy 2024 </p>
         <div className="findInfo">

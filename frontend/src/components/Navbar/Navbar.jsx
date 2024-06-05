@@ -4,6 +4,7 @@ import Hamburger from "hamburger-react";
 import "../Navbar/Navbar.css";
 import useCart from "/src/hooks/useCart";
 import CartDropdown from "../CartDropdown";
+import { FaCartShopping } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
           className="hamburgerMenu"
         />
         <div className="logo">
-          <img id="logo" src="./monstera-logo.png" alt="Logo" />
+          <img id="logo" src="/src/assets/monstera-logo.png" alt="Logo" />
           <h3>EARTHY</h3>
         </div>
         <div className="nav-links">
@@ -61,7 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
         <button className="cart-button" onClick={handleCartButtonClick}>
-          Cart ({state.cartItems.length})
+          <FaCartShopping /> {state.cartItems.length}
         </button>
         {isCartOpen && <CartDropdown onClose={() => setIsCartOpen(false)} />}
       </nav>

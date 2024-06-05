@@ -30,7 +30,7 @@ const CategoryPage = () => {
           <ProductCard
             key={product.id}
             id={product.id}
-            imgLink={product.image_link}
+            image_link={product.image_link}
             name={product.name}
             price={product.price}
           />

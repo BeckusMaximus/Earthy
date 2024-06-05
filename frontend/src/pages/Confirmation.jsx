@@ -4,6 +4,7 @@ import Confetti from "react-confetti";
 const confirmation = () => {
   /* const { width, height } = useWindowSize(); */
   /* const windowSize = 100% */
+
   return (
     <>
       <Confetti />
