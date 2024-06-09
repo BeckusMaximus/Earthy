@@ -1,25 +1,27 @@
-/* import React from 'react'; */
 import { Link } from "react-router-dom";
-import useCart from "/src/hooks/useCart";
+import useCart from "/src/hooks/useCart"; // Importerar en custom hook för att hantera kundvagnen
 import PropTypes from "prop-types";
-import "./cartDropdown.css";
+import "../cartDropDown/cartDropdown.css";
 import { VscClose } from "react-icons/vsc";
 
 const CartDropdown = ({ onClose }) => {
+  // Hämtar state och dispatch funktion från useCart hook
   const { state, dispatch } = useCart();
+  // Beräknar det totala beloppet för varor i kundvagnen
   const totalAmount = state.cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
+  // Hanterar borttagning av en vara från kundvagnen
   const handleRemove = (id) => {
     dispatch({ type: "REMOVE_FROM_CART", id });
   };
-
+  // Hanterar ökning av kvantiteten för en vara i kundvagnen
   const handleIncrease = (id) => {
     dispatch({ type: "INCREASE_QUANTITY", id });
   };
-
+  // Hanterar minskning av kvantiteten för en vara i kundvagnen
   const handleDecrease = (id) => {
     dispatch({ type: "DECREASE_QUANTITY", id });
   };
@@ -73,6 +75,7 @@ const CartDropdown = ({ onClose }) => {
     </div>
   );
 };
+// Typkontroll för props
 CartDropdown.propTypes = {
   onClose: PropTypes.func.isRequired,
 };

@@ -1,18 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../ProductCard/ProductCard.css";
-import useCart from "/src/hooks/useCart";
+import useCart from "/src/hooks/useCart"; // Importerar en custom hook för att hantera kundvagnen
 
 const ProductCard = ({ id, image_link, name, price }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Använder useNavigate hook för att navigera mellan sidor
 
+  // Hanterar klick på "More" knappen och navigerar till produktens detaljsida
   const handleReadMoreClick = () => {
     navigate(`/productPage/${id}`);
   };
+  // Hämtar dispatch funktionen från useCart hook
   const { dispatch } = useCart();
 
+  // Hanterar klick på "Add to Cart" knappen och lägger till produkten i kundvagnen
   const handleAddToCart = () => {
     const product = { id, image_link, name, price };
+    // Dispatchar en action för att lägga till produkten i kundvagnen
     dispatch({ type: "ADD_TO_CART", product });
   };
 
@@ -37,6 +41,7 @@ const ProductCard = ({ id, image_link, name, price }) => {
   );
 };
 
+// Typkontroll för props
 ProductCard.propTypes = {
   id: PropTypes.number,
   image_link: PropTypes.string,

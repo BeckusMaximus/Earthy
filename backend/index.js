@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-let database;
+let database; // Variabel för att lagra databasanslutningen
 
 (async () => {
   try {
@@ -23,85 +23,78 @@ let database;
   }
 })();
 
-async function queryProductsByCategoryName(categoryName) {
-  try {
-    const query = `
-      SELECT p.* 
-      FROM products p
-      JOIN categories c ON p.category_id = c.id
-      WHERE c.name = ?`;
-    const rows = await database.all(query, [categoryName]);
-    return rows;
-  } catch (error) {
-    console.error("Database query error:", error);
-    throw error;
-  }
-}
-
+// Hämtar produkter baserat på kategorinamn
 app.get("/categoryPage/:categoryName", async (request, response) => {
   const categoryName = request.params.categoryName;
 
   try {
     if (!database) {
-      return response.status(500).send("Database is not initialized yet");
+      return response.status(500).send("Database is not initialized");
     }
 
-    const products = await queryProductsByCategoryName(categoryName);
+    const query = `
+      SELECT p.* 
+      FROM products p
+      JOIN categories c ON p.category_id = c.id
+      WHERE c.name = ?`;
+    const products = await database.all(query, [categoryName]);
+
     response.json(products);
   } catch (error) {
-    response.status(500).send("Internal Server Error");
+    response.status(500).send("Internal server error");
   }
 });
 
-app.get("/productPage/:productId", async (request, response) => {
-  const productId = request.params.productId;
+// Hämtar produkt och dess recensioner baserat på produkt ID
+app.get("/productPage/:productId", async (req, res) => {
+  const productId = req.params.productId;
 
   try {
     if (!database) {
-      return response
-        .status(500)
-        .json({ error: "Database is not initialized yet" });
+      return res.status(500).json("Database is not initialized");
     }
 
-    const productQuery = `SELECT * FROM products WHERE id = ?`;
-    const product = await database.get(productQuery, [productId]);
+    const product = await database.get("SELECT * FROM products WHERE id = ?", [
+      productId,
+    ]);
 
     if (!product) {
-      return response.status(404).json({ error: "Product not found" });
+      return res.status(404).json({ error: "Product not found" });
     }
 
-    const reviewsQuery = `SELECT * FROM reviews WHERE product_id = ?`;
-    const reviews = await database.all(reviewsQuery, [productId]);
+    const reviews = await database.all(
+      "SELECT * FROM reviews WHERE product_id = ?",
+      [productId]
+    );
 
-    response.json({ product, reviews });
+    res.json({ product, reviews });
   } catch (error) {
-    console.error("Error while querying product:", error);
-    response.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json("Internal server error");
   }
 });
-
-app.post("/productPage/:productId", async (request, response) => {
-  const productId = request.params.productId;
-  const { name, review_text } = request.body;
+// Lägger till en recension baserat på produkt ID
+app.post("/productPage/:productId", async (req, res) => {
+  const productId = req.params.productId;
+  const { name, review_text } = req.body;
 
   try {
     if (!database) {
-      return response
-        .status(500)
-        .json({ error: "Database is not initialized yet" });
+      return res.status(500).json("Database is not initialized");
     }
 
-    const query = `INSERT INTO reviews (product_id, name, review_text) VALUES (?, ?, ?)`;
-    const result = await database.run(query, [productId, name, review_text]);
+    const result = await database.run(
+      "INSERT INTO reviews (product_id, name, review_text) VALUES (?, ?, ?)",
+      [productId, name, review_text]
+    );
 
-    response.json({ id: result.lastID });
+    res.json({ id: result.lastID });
   } catch (error) {
-    console.error("Error while inserting review:", error);
-    response.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json("Internal server error");
   }
 });
 
-app.post("/checkout", async (req, res) => {});
+/* Mennigen var att jag skulle lägga in order informationen in i databas tabellen orders men tiden fanns inte till då jag fick prioriteran annat. */
+/* app.post("/checkout", async (req, res) => {}); */
 
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000/");

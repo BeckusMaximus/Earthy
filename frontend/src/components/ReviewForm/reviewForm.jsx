@@ -2,17 +2,22 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "../ReviewForm/reviewForm.css";
 const ReviewForm = ({ productId, onReviewSubmitted }) => {
+  // Skapar state-variabler för att lagra namn och recensionstext
   const [name, setName] = useState("");
   const [reviewText, setReviewText] = useState("");
 
+  // Hanterar formulärets submit-händelse
   const handleSubmit = async (event) => {
+    // Hindrar standardbeteende för formulärets submit-händelse
     event.preventDefault();
     try {
+      // Kopplar produktens ID till recensionen
       const newReview = {
         product_id: productId,
         name: name,
         review_text: reviewText,
       };
+      // Skickar en POST-begäran till servern med den nya recensionen
       await fetch(`http://localhost:3000/productPage/${productId}`, {
         method: "POST",
         headers: {
@@ -20,11 +25,13 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
         },
         body: JSON.stringify(newReview),
       });
+      // Återställer fältens värden efter att recensionen har skickats
       setName("");
       setReviewText("");
       onReviewSubmitted();
     } catch (error) {
-      console.error("Error submitting review:", error);
+      // Loggar eventuella fel som uppstår
+      console.error("Error submitting review", error);
     }
   };
 
@@ -49,6 +56,7 @@ const ReviewForm = ({ productId, onReviewSubmitted }) => {
     </form>
   );
 };
+// Typkontroll för props
 ReviewForm.propTypes = {
   productId: PropTypes.string,
   onReviewSubmitted: PropTypes.func,

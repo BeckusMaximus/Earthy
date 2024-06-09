@@ -15,13 +15,22 @@ const Home = () => {
         <h2>New arrivals</h2>
         <div id="newArrivals">
           <div className="newBox">
-            <img src="/src/assets/cleaningSpray.avif" />
+            <img
+              src="/src/assets/cleaningSpray.avif"
+              alt="Cleaning spray bottle"
+            />
           </div>
           <div className="newBox">
-            <img src="/src/assets/cleaningSpray.avif" />
+            <img
+              src="/src/assets/cleaningSpray.avif"
+              alt="Cleaning spray bottle"
+            />
           </div>
           <div className="newBox">
-            <img src="/src/assets/cleaningSpray.avif" />
+            <img
+              src="/src/assets/cleaningSpray.avif"
+              alt="Cleaning spray bottle"
+            />
           </div>
         </div>
         <h4 id="mainPara">
@@ -35,7 +44,10 @@ const Home = () => {
         <div id="indexLinks">
           <div className="linksWrapper">
             <Link to="/categoryPage/Kitchen">
-              <img src="/src/assets/linkImg1.jpg" />
+              <img
+                src="/src/assets/linkImg1.jpg"
+                alt="Green plate with wooden cutlery"
+              />
               <div>
                 <h4>Kitchen</h4>
               </div>
@@ -43,7 +55,7 @@ const Home = () => {
           </div>
           <div className="linksWrapper">
             <Link to="/categoryPage/Bathroom">
-              <img src="/src/assets/soap.avif" />
+              <img src="/src/assets/soap.avif" alt="Four bars of soap" />
               <div>
                 <h4>Bathroom</h4>
               </div>
@@ -51,7 +63,10 @@ const Home = () => {
           </div>
           <div className="linksWrapper">
             <Link to="/categoryPage/Selfcare">
-              <img src="/src/assets/skincare.avif" />
+              <img
+                src="/src/assets/skincare.avif"
+                alt="Skincare products on display"
+              />
               <div>
                 <h4>Selfcare</h4>
               </div>

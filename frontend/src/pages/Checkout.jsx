@@ -1,29 +1,29 @@
-import "../pages/style/payment.css";
+import "../pages/style/checkout.css";
 import { useNavigate, Link } from "react-router-dom";
 import useCart from "/src/hooks/useCart";
 import { VscClose } from "react-icons/vsc";
 import { useState } from "react";
 import { SiKlarna } from "react-icons/si";
-/* import { FaCcVisa } from "react-icons/fa";
-import { FaCcMastercard } from "react-icons/fa"; */
 
 const Checkout = () => {
+  // Skapar state-variabler för att lagra användarinmatningar
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [total, setTotal] = useState("");
 
-  const { state, dispatch } = useCart();
+  const { state, dispatch } = useCart(); // Hämtar state och dispatch funktion från useCart hook
   const navigate = useNavigate();
+  // Beräknar det totala beloppet för varor i kundvagnen
   const totalAmount = state.cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-
+  // Hanterar borttagning av en vara från kundvagnen
   const handleRemove = (id) => {
     dispatch({ type: "REMOVE_FROM_CART", id });
   };
-
+  // Hanterar checkout-processen
   const handleCheckout = async () => {
     try {
       const placeOrder = {
@@ -32,6 +32,7 @@ const Checkout = () => {
         email: email,
         sum: total,
       };
+        // Skickar en POST-begäran till servern med orderinformationen
       const response = await fetch("http://localhost:3000/checkout", {
         method: "POST",
         headers: {
@@ -123,8 +124,6 @@ const Checkout = () => {
                 <label>
                   <input type="radio" value="mastercard" name="payment"></input>
                   <img src="/src/assets/mastercard.webp" />
-
-                  {/* <FaCcMastercard /> */}
                 </label>
               </div>
               <label>Card number:</label>

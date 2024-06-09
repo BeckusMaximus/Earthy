@@ -11,7 +11,6 @@
 }
 #aboutWrapper h2 {
   text-align: center;
-  /* text-decoration: underline; */
 }
 #aboutWrapper h4 {
   font-size: 1.2rem;
@@ -27,7 +26,6 @@
   font-weight: 500;
 }
 #secondPara {
-  /* width: 80%; */
   padding-top: 1.5rem;
   text-align: center;
   font-size: 1.1rem;
@@ -36,13 +34,11 @@
   padding-bottom: 0.5rem;
 }
 #thirdPara {
-  /* width: 80%; */
   padding-top: 1.5rem;
   text-align: center;
 }
 #thirdPara p {
   padding: 0.5rem 0rem;
-  /* font-size: 1.1rem; */
 }
 #thirdPara h4 {
   text-align: center;
@@ -65,20 +61,3 @@
     font-size: 1.8rem;
   }
 }
-
-/* @media screen and (min-width: 945px) {
-  #aboutWrapper {
-    width: 70%;
-     display: flex;
-    flex-direction: column;
-    right: 0;
-    left: 0;
-  }
-  #aboutWrapper h2 {
-    font-size: 2rem;
-  }
-  #aboutWrapper p {
-    font-size: 1.2rem;
-  }
-}
- */

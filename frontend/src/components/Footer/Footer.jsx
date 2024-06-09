@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <>
       <footer>
-        {/*         <h3>Crafting a greener future, one step at a time.</h3> */}
         <div className="footerLinks">
           <Link to="/">Home</Link>
           <Link to="/categoryPage/Kitchen">Kitchen</Link>
@@ -15,10 +14,6 @@ const Footer = () => {
         </div>
         <p className="crName">© Earthy 2024 </p>
         <div className="findInfo">
-          {/*     <p>
-            <span>Adress:</span> Earthy <br />
-            45 Bloom Street, FL 12345 USA
-          </p> */}
           <p>
             <span>Email:</span> support@earthy.com
           </p>

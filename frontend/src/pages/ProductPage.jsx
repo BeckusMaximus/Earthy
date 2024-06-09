@@ -4,14 +4,20 @@ import "../pages/style/ProductPage.css";
 import ReviewForm from "../components/ReviewForm/reviewForm";
 import useCart from "../hooks/useCart";
 const ProductPage = () => {
+  // Hämtar produkt-ID från URLen
   const { productId } = useParams();
+  // Skapar en state-variabel för att lagra produktinformationen
   const [product, setProduct] = useState({});
+  // Skapar en state-variabel för att lagra recensioner
   const [reviews, setReviews] = useState([]);
+  // Hämtar dispatch funktion från useCart hook
   const { dispatch } = useCart();
 
+  // useEffect hook för att hämta produkt och recensioner när produkt-ID ändras
   useEffect(() => {
     const fetchProductAndReviews = async () => {
       try {
+        // Hämtar produkt och recensioner från servern
         const response = await fetch(
           `http://localhost:3000/productPage/${productId}`
         );
@@ -19,29 +25,34 @@ const ProductPage = () => {
         setProduct(data.product);
         setReviews(data.reviews);
       } catch (error) {
-        console.error("Error fetching product and reviews:", error);
+        console.error("Error fetching product and reviews", error);
       }
     };
 
-    fetchProductAndReviews();
-  }, [productId]);
+    fetchProductAndReviews(); // Anropar funktionen för att hämta produkt och recensioner
+  }, [productId]); // Kör om när produkt-ID ändras
 
+  // Hanterar lägg till i kundvagnen
   const handleAddToCart = () => {
+    // Dispatchar en action för att lägga till produkten i kundvagnen
     dispatch({ type: "ADD_TO_CART", product });
   };
 
+  // Hanterar när en recension skickas in
   const handleReviewSubmitted = () => {
     const fetchReviews = async () => {
       try {
+        // Hämtar recensionerna från servern
         const response = await fetch(
           `http://localhost:3000/productPage/${productId}`
         );
         const data = await response.json();
-        setReviews(data.reviews);
+        setReviews(data.reviews); // Uppdaterar recensionerna i state
       } catch (error) {
-        console.error("Error fetching reviews:", error);
+        console.error("Error fetching reviews", error);
       }
     };
+    // Anropar funktionen för att hämta recensioner
     fetchReviews();
   };
 
